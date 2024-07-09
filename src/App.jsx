@@ -1,12 +1,13 @@
-import React from 'react'
-const App = () => {
+import React from 'react';
+import Counter from './Components/Counter';
 
+function App() {
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="App">
+      <h1>Counter Example</h1>
+      <Counter initialCount={0} decrementAmount={1} /> {/* Customize initialCount and decrementAmount */}
     </div>
-
-  )
+  );
 }
 
-export default App
+export default App;
