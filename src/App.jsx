@@ -1,12 +1,13 @@
-import React from 'react'
-const App = () => {
+import React from 'react';
+import MyClock from './Components/MyClock';
 
+function App() {
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="App">
+      <h1>React Clock Example</h1>
+      <MyClock />
     </div>
-
-  )
+  );
 }
 
-export default App
+export default App;
