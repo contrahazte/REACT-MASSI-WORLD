@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Welcome } from './Components/Welcome';
 
-const App = () => {
+function App() {
+  const name = 'Juan'; // Puedes cambiar esto según tus necesidades
+  const age = 30; // Cambia la edad también
+
   return (
-    <div>App</div>
-  )
+    <div className="App">
+      <Welcome name={name} age={age} />
+    </div>
+  );
 }
 
-export default App
+export default App;
