@@ -1,13 +1,17 @@
-import React from 'react'
-const App = () => {
-  const name = "Alberto"
-  const age = 43
-  return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+import React from 'react';
+import AlertClock from './Components/AlertClock';
 
-  )
+function App() {
+  const handleAlertButtonClick = () => {
+    alert('Button clicked!'); // Replace with your desired alert behavior
+  };
+
+  return (
+    <div className="App">
+      <h1>Alert Clock Example</h1>
+      <AlertClock onButtonClick={handleAlertButtonClick} />
+    </div>
+  );
 }
 
-export default App
+export default App;
