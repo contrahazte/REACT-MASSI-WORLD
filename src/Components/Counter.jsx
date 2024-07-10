@@ -1,28 +1,24 @@
+import React, { useState, useRef, useEffect } from 'react';
 
-import React, { useState, useEffect, useRef } from 'react';
-
-export function Counter({ initialValue }) {
+export const Counter = ({ initialValue }) => {
   const [count, setCount] = useState(initialValue);
-  const prevCountRef = useRef(initialValue);
+  const directionRef = useRef('');
 
   useEffect(() => {
-    // Calculate the direction of change
-    const direction = count > prevCountRef.current ? 'up' : 'down';
-
-    // Update the ref with the current count
-    prevCountRef.current = count;
-
-    // Print the direction to the console if it's different from the previous value
-    if (direction !== 'up' && direction !== 'down') {
-      console.log('Direction:', direction);
+    if (count > initialValue) {
+      directionRef.current = 'up';
+    } else if (count < initialValue) {
+      directionRef.current = 'down';
     }
-  }, [count]);
+
+    console.log(`The counter is going: ${directionRef.current}`);
+  }, [count, initialValue]);
 
   return (
     <div>
-      <p>Counter: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
     </div>
   );
-}
+};
