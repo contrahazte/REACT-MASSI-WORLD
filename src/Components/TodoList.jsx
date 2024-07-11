@@ -7,14 +7,24 @@ function TodoList({ initialTodos }) {
   const handleAddTodo = () => {
     setTodos([...todos, inputValue]);
     setInputValue('');
-    console.log(todos)
+  };
+
+  const handleRemoveTodo = (indexToRemove) => {
+    setTodos(todos.filter((_, index) => index !== indexToRemove));
+  };
+
+  const handleReset = () => {
+    setTodos([]);
   };
 
   return (
     <div>
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
+          <li key={index}>
+            {todo}
+            <button onClick={() => handleRemoveTodo(index)}>Remove</button>
+          </li>
         ))}
       </ul>
       <input
@@ -23,6 +33,7 @@ function TodoList({ initialTodos }) {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button onClick={handleAddTodo}>Add Todo</button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }
