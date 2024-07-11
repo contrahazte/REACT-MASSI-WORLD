@@ -1,7 +1,12 @@
 import React from 'react'
+import Container from './Components/Container'
 
 export const App = () => {
+  const title="I am the child"
   return (
-    <div>App</div>
+    <div>
+      <Container title="Some title"/>
+    </div>
+  
   )
 }
