@@ -1,7 +1,9 @@
 import React from 'react'
+import GithubUser from './Components/GithubUser'
 
 export const App = () => {
   return (
-    <div>App</div>
+    <GithubUser username="octocat" />
+
   )
 }
