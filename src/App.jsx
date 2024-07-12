@@ -1,7 +1,12 @@
 import React from 'react'
+import GithubUser from './Components/GithubUser.jsx'
 
-export const App = () => {
+
+const App = () => {
   return (
-    <div>App</div>
+<GithubUser
+username="octocat"
+/>
   )
 }
+export default App
