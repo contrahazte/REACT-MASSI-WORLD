@@ -1,9 +1,9 @@
 import React from 'react'
-import GithubUser from './Components/GithubUser'
+import GithubUsers from './Components/GithubUser'
 
 export const App = () => {
   return (
-    <GithubUser username="octocat" />
+    <GithubUsers username="octocat" />
 
   )
 }
